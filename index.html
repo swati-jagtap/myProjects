@@ -11,6 +11,12 @@
             margin-top: 40px;
             color: rgb(226, 18, 11);
         }
+        h6{
+            text-align: center;
+            font-family: fantasy;
+           
+            color: rgb(226, 18, 11);
+        }
         .heart{
             position: relative;
             margin: auto;
@@ -46,10 +52,12 @@
         
     </style>
 </head>
+
 <body>
     <h1>Check Your Today's Lucky Color </h1>
+    <h6>By clicking on heart</h6> 
     <div id="heart"></div>
-    <div class="heart"  onclick="changeC()" onmouseover="changeC()" onmouseout="ChangeToN()">
+    <div class="heart"  onclick="changeC()">
     <div class="heartl"> </div>
     <div class="heartr"> </div>
     </div>
@@ -74,6 +82,8 @@
             document.querySelector(".heart").style.backgroundColor= color;
             document.querySelector(".heartl").style.backgroundColor= color;
             document.querySelector(".heartr").style.backgroundColor= color;
+            document.querySelector(".heart").onclick = null;            //execute onclickevent only once
+//onmouseover="changeC()" onmouseout="ChangeToN()"
         }
     </script>
 </body>
