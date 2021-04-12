@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changer </title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: fantasy;
+            margin-top: 40px;
+            color: rgb(226, 18, 11);
+        }
+        .heart{
+            position: relative;
+            margin: auto;
+            margin-top: 25vh;
+            background-color: rgb(129, 4, 25);
+            height:300px;
+            width:300px;
+            transform: rotate(134deg);
+        }
+        .heartl,.heartr{
+            content: ""; 
+           position: absolute;
+           background-color: rgb(129, 4, 25);
+           height: 300px;
+           width:300px;
+           border-radius: 50%;
+        }
+        .heartl{           
+           left: -50%;          
+        }
+        .heartr{           
+           top: 50%;         
+        }
+        @media screen and (max-width: 670px){
+            h1{
+                font-size: 24px;
+            }
+            .heart,.heartr,.heartl{
+           height: 200px;
+           width:200px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Check Your Today's Lucky Color </h1>
+    <div id="heart"></div>
+    <div class="heart"  onclick="changeC()" onmouseover="changeC()" onmouseout="ChangeToN()">
+    <div class="heartl"> </div>
+    <div class="heartr"> </div>
+    </div>
+    </div>
+
+    </div>
+    <script>
+        function ChangeToN(){
+            document.querySelector(".heart").style.backgroundColor= "rgb(129, 4, 25)";//rectangle
+            document.querySelector(".heartl").style.backgroundColor= "rgb(129, 4, 25)";//left circle
+            document.querySelector(".heartr").style.backgroundColor= "rgb(129, 4, 25)";//right circle
+        }
+        function changeC(){
+            const c=["rgb(31,4,129)","rgb(4, 129, 56)","rgb(127, 129, 4)",
+            "rgb(3, 2, 31)","rgb(245, 192, 201)","rgb(4, 58, 129)","rgb(4, 8, 19)"
+            ,"rgb(43, 128, 219)","rgb(4,138, 19)","rgb(47, 28, 219)","rgb(41, 18, 119)",
+            "rgb(129, 4, 73)","rgb(104, 4, 129)","rgb(53, 193, 228)","purple",
+            "violet","crimson","yellow","powderblue",
+            "orange"]
+            var color=c[Math.floor(Math.random()*c.length)];
+           // console.log(color);
+            document.querySelector(".heart").style.backgroundColor= color;
+            document.querySelector(".heartl").style.backgroundColor= color;
+            document.querySelector(".heartr").style.backgroundColor= color;
+        }
+    </script>
+</body>
+</html>
